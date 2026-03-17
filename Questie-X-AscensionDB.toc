@@ -1,5 +1,5 @@
 ## Interface: 30300
-## Title: |cFF5EBAF3Questie|r|cFFDAFAFD-Ascension|r
+## Title: |cFF5EBAF3Questie|r|cFFDAFAFD-X-AscensionDB|r
 ## Notes: Ascension server database for Questie-X
 ## Author: Xurkon
 ## Version: 1.0.0
