@@ -1,0 +1,7 @@
+# Ensure consistent line endings
+* text=auto
+
+# Exclude dev/meta files from release archives
+.gitattributes export-ignore
+.gitignore export-ignore
+.git_disabled/ export-ignore
