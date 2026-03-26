@@ -1,15 +1,15 @@
 # Changelog
 
-## v1.0.2 — Compatibility Update
+## v1.0.2 — Syntax Fix
 
-### Plugin
-- **[Loader]** Updated `AscensionLoader.lua` to properly handle the split-loading architecture for improved memory usage during database loading.
+### Database
+- **[Fix]** Fixed syntax error in `Bronzebeard/Split/AscensionNpcDB_2.lua` (missing closing `}` at end of NPC entry for ID 3287) that caused Lua parse errors on load.
 
-## v1.0.1 — Database Split
+## v1.0.1 — Architecture Update
 
 ### Database
 - **[Performance]** Split monolithic database files into smaller chunks to resolve memory allocation errors.
-- **[Architecture]** Adopted the split-loading architecture to reduce initial memory footprint and load times.
+- **[Architecture]** Adopted the split-loading architecture (like WotLKDB) to reduce initial memory footprint and load times.
 
 ### Plugin
 - **[Loader]** Updated `AscensionLoader.lua` to dynamically inject `addonTable` populated by split files.
@@ -17,14 +17,7 @@
 ## v1.0.0 — Initial Release
 
 ### Database
-
-- **[Quests]** Initial Ascension custom quest database (`AscensionQuestDB.lua`).
-- **[NPCs]** Initial Ascension NPC database with spawn coordinates (`AscensionNpcDB.lua`).
-- **[Objects]** Initial Ascension object database (`AscensionObjectDB.lua`).
-- **[Items]** Initial Ascension item database (`AscensionItemDB.lua`).
-- **[Zones]** Added UI map ID mappings and zone table overrides for Ascension-specific zones.
+- **[Quests]** Initial Ascension quest loading.
 
 ### Plugin
-
-- **[Loader]** `AscensionLoader.lua` registers all database tables with Questie-X via `QuestiePluginAPI`.
-- **[TOC]** `Questie-X-AscensionDB.toc` declares `Questie-X` as a hard dependency — plugin will not load without the core addon present.
+- **[Core]** Created Questie-X-AscensionDB.

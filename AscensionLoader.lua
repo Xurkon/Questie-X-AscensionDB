@@ -1,59 +1,65 @@
+local addonName, addonTable = ...
 
-local frame = CreateFrame("Frame")
-frame:RegisterEvent("PLAYER_LOGIN")
-frame:SetScript("OnEvent", function(self)
-    self:UnregisterEvent("PLAYER_LOGIN")
-
-    local realmName = GetRealmName() or ""
-    if not (_G.IsAscensionServer or realmName == "Elune" or realmName == "Area 52" or realmName == "Bronzebeard" or realmName == "Rexxar" or realmName == "Grizzly Hills") then return end
-
+-- Ascension-X Loader
+local function registerAndInject()
     if not QuestieLoader then
-        return
+        return false
     end
 
     ---@type QuestiePluginAPI
     local QuestiePluginAPI = QuestieLoader:ImportModule("QuestiePluginAPI")
-
     if not QuestiePluginAPI then
-        Questie:Debug(Questie.DEBUG_CRITICAL, "[AscensionLoader] QuestiePluginAPI module not found — Ascension data will not load.")
-        return
+        return false
     end
 
-    ---@type table
-    local AscensionDB = _G.AscensionDB or {}
+    local realmName = GetRealmName() or ""
+    -- Broaden the check to match QuestieServer.lua logic
+    local isAscension = _G.IsAscensionServer or realmName:find("Ascension") or realmName:find("Area 52") or
+                      realmName:find("Al'ar") or realmName:find("Thrall") or realmName:find("Elune") or
+                      realmName:find("Bronzebeard") or realmName:find("Rexxar") or realmName:find("Grizzly Hills")
+
+    if not isAscension then 
+        return true -- Not on Ascension, skip but don't retry
+    end
 
     local plugin = QuestiePluginAPI:RegisterPlugin("Ascension")
-    if not plugin then return end
+    if not plugin then return true end -- Already registered or error
 
     print("|cFF5EBAF3Questie|r|cFFDAFAFD-X|r [AscensionLoader] Plugin registered, injecting data...")
-    Questie:Debug(Questie.DEBUG_DEVELOP, "[AscensionLoader] Registering Ascension plugin...")
 
-    if AscensionZoneTables then
-        Questie:Debug(Questie.DEBUG_DEVELOP, "[AscensionLoader] Injecting zone tables...")
-        plugin:InjectZoneTables(AscensionZoneTables)
+    if addonTable.zoneSort or addonTable.uiMapIdToAreaId then
+        plugin:InjectZoneTables(addonTable)
     end
 
-    if AscensionUiMapData then
-        Questie:Debug(Questie.DEBUG_DEVELOP, "[AscensionLoader] Injecting UI map data...")
-        plugin:InjectUiMapData(AscensionUiMapData)
+    if addonTable.uiMapData then
+        plugin:InjectUiMapData(addonTable)
     end
 
-    if AscensionDB.npcData then
-        Questie:Debug(Questie.DEBUG_DEVELOP, "[AscensionLoader] Injecting NPC data...")
-        plugin:InjectDatabase("NPC", AscensionDB.npcData)
+    if addonTable.npcData then
+        plugin:InjectDatabase("NPC", addonTable.npcData)
     end
-    if AscensionDB.objectData then
-        Questie:Debug(Questie.DEBUG_DEVELOP, "[AscensionLoader] Injecting Object data...")
-        plugin:InjectDatabase("OBJECT", AscensionDB.objectData)
+    if addonTable.objectData then
+        plugin:InjectDatabase("OBJECT", addonTable.objectData)
     end
-    if AscensionDB.itemData then
-        Questie:Debug(Questie.DEBUG_DEVELOP, "[AscensionLoader] Injecting Item data...")
-        plugin:InjectDatabase("ITEM", AscensionDB.itemData)
+    if addonTable.itemData then
+        plugin:InjectDatabase("ITEM", addonTable.itemData)
     end
-    if AscensionDB.questData then
-        Questie:Debug(Questie.DEBUG_DEVELOP, "[AscensionLoader] Injecting Quest data...")
-        plugin:InjectDatabase("QUEST", AscensionDB.questData)
+    if addonTable.questData then
+        plugin:InjectDatabase("QUEST", addonTable.questData)
     end
 
-    plugin:FinishLoading()
-end)
+    print("|cFF5EBAF3Questie|r|cFFDAFAFD-X|r [AscensionLoader] Data injection complete.")
+    plugin:FinishLoading("Ascension")
+    return true
+end
+
+-- Try registering immediately
+if not registerAndInject() then
+    -- Fallback: Register at PLAYER_LOGIN if QuestieLoader wasn't ready
+    local frame = CreateFrame("Frame")
+    frame:RegisterEvent("PLAYER_LOGIN")
+    frame:SetScript("OnEvent", function(self)
+        self:UnregisterEvent("PLAYER_LOGIN")
+        registerAndInject()
+    end)
+end
