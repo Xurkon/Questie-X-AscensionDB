@@ -33,9 +33,13 @@ local function registerAndInject()
     end
 
     if addonTable.uiMapData then
+        print("[AscensionLoader] Using addonTable.uiMapData")
         plugin:InjectUiMapData(addonTable)
     elseif AscensionUiMapData and AscensionUiMapData.uiMapData then
+        print("[AscensionLoader] Using AscensionUiMapData.uiMapData with " .. tostring(AscensionUiMapData.uiMapData and "data" or "nil"))
         plugin:InjectUiMapData(AscensionUiMapData)
+    else
+        print("[AscensionLoader] No uiMapData found - addonTable.uiMapData=" .. tostring(addonTable.uiMapData) .. " AscensionUiMapData=" .. tostring(AscensionUiMapData))
     end
 
     -- Inject the data into Questie-X
