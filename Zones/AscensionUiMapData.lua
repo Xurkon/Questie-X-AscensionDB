@@ -1,5 +1,5 @@
 print("[AscensionUiMapData] Loading file, realm=" .. tostring(GetRealmName()))
-local realmName = GetRealmName() or ""; if not (_G.IsAscensionServer or realmName == "Elune" or realmName == "Area 52" or realmName == "Bronzebeard" or realmName == "Rexxar" or realmName == "Grizzly Hills") then print("[AscensionUiMapData] Skipped due to realm check"); return end
+local realmName = GetRealmName() or ""; if not (_G.IsAscensionServer or realmName:find("Elune") or realmName:find("Area 52") or realmName:find("Bronzebeard") or realmName:find("Rexxar") or realmName:find("Grizzly Hills")) then print("[AscensionUiMapData] Skipped due to realm check"); return end
 ---@class AscensionUiMapData
 AscensionUiMapData = AscensionUiMapData or {}
 
