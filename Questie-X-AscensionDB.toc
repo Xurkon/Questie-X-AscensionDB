@@ -1,14 +1,17 @@
 ## Interface: 30300
-## Title: |cFF5EBAF3Questie|r|cFFDAFAFD-X-AscensionDB|r
-## Notes: Ascension server database for Questie-X
-## Author: Xurkon
-## Version: 1.0.0
-## Dependencies: Questie-X
+## Title: Questie-X |cFF00FF00[AscensionDB]|r
+## Notes: Questie-X Database for Ascension
+## Author: Questie-X Team
+## Version: 1.0.3
+## RequiredDeps: Questie-X
+## X-Questie-Plugin-Name: Ascension
 
-Bronzebeard\AscensionNpcDB.lua
-Bronzebeard\AscensionObjectDB.lua
-Bronzebeard\AscensionItemDB.lua
-Bronzebeard\AscensionQuestDB.lua
-Zones\AscensionUiMapData.lua
-Zones\AscensionZoneTables.lua
 AscensionLoader.lua
+
+# Database Chunks
+Zones\AscensionZoneTables.lua
+Zones\AscensionUiMapData.lua
+Bronzebeard\Split\AscensionQuestDB_questData_1.lua
+Bronzebeard\Split\AscensionNpcDB_npcData_1.lua
+Bronzebeard\Split\AscensionObjectDB_objectData_1.lua
+Bronzebeard\Split\AscensionItemDB_itemData_1.lua

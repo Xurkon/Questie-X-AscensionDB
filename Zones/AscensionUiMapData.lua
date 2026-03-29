@@ -324,4 +324,9 @@ end
 if QuestieCompat and QuestieCompat.LoadUiMapData then
     hooksecurefunc(QuestieCompat, "LoadUiMapData", ApplyUiMapData)
 end
-    ApplyUiMapData()
+ApplyUiMapData()
+
+-- Export to addonTable for AscensionLoader to find
+if addonTable then
+    addonTable.uiMapData = AscensionUiMapData.uiMapData
+end

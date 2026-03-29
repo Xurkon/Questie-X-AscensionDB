@@ -59,3 +59,9 @@ AscensionZoneTables.zoneSort = AscensionZoneTables.zoneSort or {
 	[1216] = "The Grizzled Den",
 	[1214] = "Gol'bolar Quarry",
 }
+
+-- Export to addonTable for AscensionLoader to find
+if addonTable then
+    addonTable.uiMapIdToAreaId = AscensionZoneTables.uiMapIdToAreaId
+    addonTable.zoneSort = AscensionZoneTables.zoneSort
+end

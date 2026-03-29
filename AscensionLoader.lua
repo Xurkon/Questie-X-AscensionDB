@@ -1,4 +1,5 @@
 local addonName, addonTable = ...
+print("|cFF5EBAF3Questie|r|cFFDAFAFD-X|r [AscensionLoader] Loading...")
 
 -- Ascension-X Loader
 local function registerAndInject()
@@ -35,8 +36,12 @@ local function registerAndInject()
         plugin:InjectUiMapData(addonTable)
     end
 
+    -- Inject the data into Questie-X
     if addonTable.npcData then
         plugin:InjectDatabase("NPC", addonTable.npcData)
+    end
+    if addonTable.questData then
+        plugin:InjectDatabase("QUEST", addonTable.questData)
     end
     if addonTable.objectData then
         plugin:InjectDatabase("OBJECT", addonTable.objectData)
@@ -44,9 +49,8 @@ local function registerAndInject()
     if addonTable.itemData then
         plugin:InjectDatabase("ITEM", addonTable.itemData)
     end
-    if addonTable.questData then
-        plugin:InjectDatabase("QUEST", addonTable.questData)
-    end
+
+    _G.AscensionDB = addonTable
 
     print("|cFF5EBAF3Questie|r|cFFDAFAFD-X|r [AscensionLoader] Data injection complete.")
     plugin:FinishLoading("Ascension")
