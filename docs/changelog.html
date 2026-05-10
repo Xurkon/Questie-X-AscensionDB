@@ -182,11 +182,10 @@
         <h2 id="v104">v1.0.4 — Realm Check Fix</h2>
         <ul>
             <li>
-                <strong>[Fix — Realm Allowlist]</strong> Extended realm allowlist in <code>AscensionLoader.lua</code> and <code>AscensionUiMapData.lua</code> to include <strong>CoA</strong>, <strong>Conquest</strong>, and <strong>Vol</strong> realm name substrings.
+                <strong>[Fix — Realm Allowlist]</strong> Extended realm allowlist in <code>AscensionLoader.lua</code> and <code>AscensionUiMapData.lua</code> to include <strong>CoA Beta on Vol'jin</strong> realm name.
                 <ul>
-                    <li>The original allowlist checked for Ascension, Elune, Area 52, Bronzebeard, Rexxar, and Grizzly Hills — but did not include the "CoA Beta on Vol'jin" realm or other Conquest-of-Azeroth realms.</li>
-                    <li>This caused the plugin to be silently skipped on those servers.</li>
-                    <li>The fix adds <code>realmName:find("CoA")</code>, <code>realmName:find("Conquest")</code>, and <code>realmName:find("Vol")</code> so the loader and map data both activate correctly on CoA Beta realms.</li>
+                    <li>The original allowlist checked for Ascension, Elune, Area 52, Bronzebeard, Rexxar, and Grizzly Hills — but did not include the "CoA Beta on Vol'jin" realm.</li>
+                    <li>This caused the plugin to be silently skipped on that server.</li>
                 </ul>
             </li>
             <li>

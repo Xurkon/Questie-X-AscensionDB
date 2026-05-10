@@ -22,7 +22,7 @@
 ## Requirements
 
 - [Questie-X](https://github.com/Xurkon/Questie-X) must be installed. This plugin will not load without it.
-- Server: Ascension (classless WoW — Elune, Area 52, Bronzebeard, Rexxar, Grizzly Hills, **CoA Beta on Vol'jin**)
+- Server: Ascension (classless WoW — Elune, Area 52, Bronzebeard, Rexxar, Grizzly Hills, CoA Beta on Vol'jin)
 
 ---
 

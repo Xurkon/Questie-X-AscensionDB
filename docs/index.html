@@ -243,7 +243,7 @@
         <section id="overview">
             <h2>Overview</h2>
             <p>Questie-X-AscensionDB is a server-specific database plugin for <a href="https://github.com/Xurkon/Questie-X" target="_blank" style="color: var(--accent-blue);">Questie-X</a>. It provides quest, NPC, object, item, and zone mapping data specific to Ascension private servers.</p>
-            <p>The plugin activates automatically on recognized Ascension realm names (Elune, Area 52, Bronzebeard, Rexxar, Grizzly Hills, CoA Beta on Vol'jin, and other Conquest-of-Azeroth realms) and registers its data via the <code>QuestiePluginAPI</code>.</p>
+            <p>The plugin activates automatically on recognized Ascension realm names (Elune, Area 52, Bronzebeard, Rexxar, Grizzly Hills, and CoA Beta on Vol'jin) and registers its data via the <code>QuestiePluginAPI</code>.</p>
         </section>
 
         <!-- Requirements -->
@@ -256,7 +256,7 @@
                 </div>
                 <div class="card">
                     <h4>Supported Realms</h4>
-                    <p>Ascension servers: Elune, Area 52, Bronzebeard, Rexxar, Grizzly Hills, CoA Beta on Vol'jin, Conquest, and other CoA variants.</p>
+                    <p>Ascension servers: Elune, Area 52, Bronzebeard, Rexxar, Grizzly Hills, and CoA Beta on Vol'jin.</p>
                 </div>
             </div>
         </section>
@@ -327,7 +327,7 @@
 
             <h3>Realm Detection</h3>
             <p>The plugin only activates on recognized Ascension realm names. The loader checks for:</p>
-            <pre><code>Ascension, Elune, Area 52, Al'ar, Thrall, Bronzebeard, Rexxar, Grizzly Hills, CoA, Conquest, Vol</code></pre>
+            <pre><code>Ascension, Elune, Area 52, Bronzebeard, Rexxar, Grizzly Hills, CoA Beta on Vol'jin</code></pre>
 
             <h3>Database Injection</h3>
             <p>The split-loading architecture reduces initial memory footprint. Database files are split into smaller chunks and loaded progressively via <code>addonTable</code>.</p>
