@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questie-X-AscensionDB - Documentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent-green: #3fb950;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --accent-orange: #d29922;
+            --border-color: #30363d;
+            --code-bg: #1b1f23;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1c2128 0%, #0d1117 100%);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--accent-blue);
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin: 30px 0 15px;
+            color: var(--text-primary);
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+        }
+
+        code {
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+            background: var(--bg-tertiary);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        pre {
+            background: var(--code-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: #e6edf3;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .card {
+            background: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            background: var(--bg-tertiary);
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(88, 166, 255, 0.05), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover::after {
+            opacity: 1;
+        }
+
+        .card h4 {
+            color: var(--accent-green);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .important {
+            background: rgba(210, 153, 34, 0.05);
+            border: 1px solid rgba(210, 153, 34, 0.2);
+            border-left: 4px solid var(--accent-orange);
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+            color: var(--text-primary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 40px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            background: var(--bg-secondary);
+        }
+
+        .file-path {
+            color: var(--accent-purple);
+            font-weight: 600;
+        }
+
+        .hero img {
+            filter: drop-shadow(0 0 20px rgba(88, 166, 255, 0.2));
+            transition: transform 0.5s ease;
+        }
+
+        .hero:hover img {
+            transform: scale(1.02);
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .table th, .table td {
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        .table th {
+            background: var(--bg-tertiary);
+            color: var(--accent-blue);
+        }
+
+        .table tr:hover {
+            background: var(--bg-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <img src="QuestieXlogo.png" alt="Questie-X Logo" width="400" />
+        <p class="subtitle">A Questie-X plugin that injects the Ascension server database — custom quests, NPCs, objects, items, and zone data — into Questie without modifying core files.</p>
+        <div style="display: flex; justify-content: center; gap: 10px;">
+            <code>Version: v1.0.4</code>
+            <a href="changelog.html"
+                style="background: var(--bg-tertiary); color: var(--accent-green); text-decoration: none; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; border: 1px solid var(--border-color);">View
+                Changelog</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Overview -->
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>Questie-X-AscensionDB is a server-specific database plugin for <a href="https://github.com/Xurkon/Questie-X" target="_blank" style="color: var(--accent-blue);">Questie-X</a>. It provides quest, NPC, object, item, and zone mapping data specific to Ascension private servers.</p>
+            <p>The plugin activates automatically on recognized Ascension realm names (Elune, Area 52, Bronzebeard, Rexxar, Grizzly Hills, CoA Beta on Vol'jin, and other Conquest-of-Azeroth realms) and registers its data via the <code>QuestiePluginAPI</code>.</p>
+        </section>
+
+        <!-- Requirements -->
+        <section id="requirements">
+            <h2>Requirements</h2>
+            <div class="grid">
+                <div class="card">
+                    <h4>Questie-X Core</h4>
+                    <p><a href="https://github.com/Xurkon/Questie-X" target="_blank" style="color: var(--accent-blue);">Questie-X</a> must be installed. This plugin will not load without it.</p>
+                </div>
+                <div class="card">
+                    <h4>Supported Realms</h4>
+                    <p>Ascension servers: Elune, Area 52, Bronzebeard, Rexxar, Grizzly Hills, CoA Beta on Vol'jin, Conquest, and other CoA variants.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Installation -->
+        <section id="installation">
+            <h2>Installation</h2>
+            <ol style="color: var(--text-secondary); padding-left: 20px; line-height: 2;">
+                <li>Download the latest release archive from the <a href="https://github.com/Xurkon/Questie-X-AscensionDB/releases" target="_blank" style="color: var(--accent-blue);">Releases</a> page.</li>
+                <li>Extract it into your <code>Interface/AddOns/</code> directory.</li>
+                <li>The extracted folder <strong>must</strong> be named <code>Questie-X-AscensionDB</code>.</li>
+                <li>Ensure <code>Questie-X</code> is also present in <code>Interface/AddOns/</code>.</li>
+                <li>Reload your UI or restart the client.</li>
+            </ol>
+
+            <div class="important">
+                <strong>Two addons are required:</strong> Questie-X-AscensionDB is a plugin and cannot function without the Questie-X core addon installed alongside it.
+            </div>
+        </section>
+
+        <!-- File Structure -->
+        <section id="structure">
+            <h2>File Structure</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>File</th>
+                        <th>Contents</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="file-path">AscensionLoader.lua</code></td>
+                        <td>Plugin entry point — registers data via <code>QuestiePluginAPI</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="file-path">Bronzebeard/AscensionNpcDB.lua</code></td>
+                        <td>Custom NPC data including spawn coordinates</td>
+                    </tr>
+                    <tr>
+                        <td><code class="file-path">Bronzebeard/AscensionObjectDB.lua</code></td>
+                        <td>Custom object data</td>
+                    </tr>
+                    <tr>
+                        <td><code class="file-path">Bronzebeard/AscensionItemDB.lua</code></td>
+                        <td>Custom item data</td>
+                    </tr>
+                    <tr>
+                        <td><code class="file-path">Bronzebeard/AscensionQuestDB.lua</code></td>
+                        <td>Custom quest definitions</td>
+                    </tr>
+                    <tr>
+                        <td><code class="file-path">Zones/AscensionUiMapData.lua</code></td>
+                        <td>UI map ID mappings for Ascension zones</td>
+                    </tr>
+                    <tr>
+                        <td><code class="file-path">Zones/AscensionZoneTables.lua</code></td>
+                        <td>Zone table overrides</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- How It Works -->
+        <section id="how-it-works">
+            <h2>How It Works</h2>
+            <p><code>AscensionLoader.lua</code> calls <code>QuestiePluginAPI:RegisterPlugin("Ascension")</code> on load and passes the database tables as overrides. Questie-X merges them into its runtime database, giving full quest tracking, map pins, and tooltip support for Ascension-specific content.</p>
+
+            <h3>Realm Detection</h3>
+            <p>The plugin only activates on recognized Ascension realm names. The loader checks for:</p>
+            <pre><code>Ascension, Elune, Area 52, Al'ar, Thrall, Bronzebeard, Rexxar, Grizzly Hills, CoA, Conquest, Vol</code></pre>
+
+            <h3>Database Injection</h3>
+            <p>The split-loading architecture reduces initial memory footprint. Database files are split into smaller chunks and loaded progressively via <code>addonTable</code>.</p>
+        </section>
+
+        <!-- Plugin API -->
+        <section id="api">
+            <h2>Plugin API Reference</h2>
+            <p>Questie-X-AscensionDB uses the <code>QuestiePluginAPI</code> to register its data:</p>
+
+            <pre><code>local plugin = QuestiePluginAPI:RegisterPlugin("Ascension")
+
+-- Inject each database type
+plugin:InjectDatabase("QUEST",  AscensionQuestDB)
+plugin:InjectDatabase("NPC",    AscensionNpcDB)
+plugin:InjectDatabase("OBJECT", AscensionObjectDB)
+plugin:InjectDatabase("ITEM",   AscensionItemDB)
+
+-- Optional: inject custom zone/map routing tables
+plugin:InjectZoneTables(AscensionZoneTables)
+
+-- Optional: inject fallback UiMapData for non-standard boundary maps
+plugin:InjectUiMapData(AscensionUiMapData)
+
+-- Always call this last — clears Questie's internal zone/quest caches
+plugin:FinishLoading()</code></pre>
+        </section>
+
+        <!-- Contributing -->
+        <section id="contributing">
+            <h2>Contributing</h2>
+            <p>Submit quest data, NPC coordinates, or fixes via pull request. See the existing database files for the expected table format.</p>
+            <p>When contributing learned data from QuestieLearner, export your data string and open an issue or pull request on the <a href="https://github.com/Xurkon/Questie-X-AscensionDB" target="_blank" style="color: var(--accent-blue);">repository</a>.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>Maintained by Xurkon</p>
+        <div style="margin-top: 15px; display: flex; justify-content: center; gap: 10px;">
+            <a href="https://www.patreon.com/Xurkon" target="_blank">
+                <img src="https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white" alt="Patreon" height="28">
+            </a>
+            <a href="https://www.paypal.me/Xurkon" target="_blank">
+                <img src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white" alt="PayPal" height="28">
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>

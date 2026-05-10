@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questie-X-AscensionDB - Changelog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent-green: #3fb950;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --accent-orange: #d29922;
+            --border-color: #30363d;
+            --code-bg: #1b1f23;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1c2128 0%, #0d1117 100%);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--accent-blue);
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin: 30px 0 15px;
+            color: var(--text-primary);
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+        }
+
+        code {
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+            background: var(--bg-tertiary);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        pre {
+            background: var(--code-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: #e6edf3;
+        }
+
+        .card {
+            background: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .card h4 {
+            color: var(--accent-green);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .important {
+            background: rgba(210, 153, 34, 0.1);
+            border-left: 4px solid var(--accent-orange);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .file-path {
+            color: var(--accent-purple);
+            font-weight: 600;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        ul li:last-child {
+            border-bottom: none;
+        }
+
+        ul li strong {
+            color: var(--accent-green);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <h1>Changelog</h1>
+        <p class="subtitle">Complete history of changes, fixes, and additions.</p>
+        <div style="display: flex; justify-content: center; gap: 10px;">
+            <code>Version: v1.0.4</code>
+            <a href="index.html"
+                style="background: var(--bg-tertiary); color: var(--accent-blue); text-decoration: none; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; border: 1px solid var(--border-color);">&larr; Back to Documentation</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 id="v104">v1.0.4 — Realm Check Fix</h2>
+        <ul>
+            <li>
+                <strong>[Fix — Realm Allowlist]</strong> Extended realm allowlist in <code>AscensionLoader.lua</code> and <code>AscensionUiMapData.lua</code> to include <strong>CoA</strong>, <strong>Conquest</strong>, and <strong>Vol</strong> realm name substrings.
+                <ul>
+                    <li>The original allowlist checked for Ascension, Elune, Area 52, Bronzebeard, Rexxar, and Grizzly Hills — but did not include the "CoA Beta on Vol'jin" realm or other Conquest-of-Azeroth realms.</li>
+                    <li>This caused the plugin to be silently skipped on those servers.</li>
+                    <li>The fix adds <code>realmName:find("CoA")</code>, <code>realmName:find("Conquest")</code>, and <code>realmName:find("Vol")</code> so the loader and map data both activate correctly on CoA Beta realms.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>[Fix — MapIconTooltip Empty creatureLevels]</strong> Resolved <code>attempt to concatenate local 'minLevel' (a nil value)</code> crash in <code>MapIconTooltip.lua</code> when hovering over creatures whose <code>creatureLevels</code> entry was an empty table <code>{}</code> instead of the expected <code>[1]=minLevel, [2]=maxLevel, [3]=rank</code> tuple. Added early-return guard in <code>_GetLevelString</code>.
+            </li>
+            <li>
+                <strong>[Export-ignore Cleanup]</strong> <code>.gitattributes</code> and <code>.gitignore</code> now match Questie-X export-ignore patterns, keeping dev files (skills, workflow, scratch, Tests, Tools, docs/) out of release .zip assets.
+            </li>
+        </ul>
+
+        <hr>
+
+        <h2 id="v103">v1.0.3 — Initialization Stability and Visibility Fix</h2>
+        <ul>
+            <li>
+                <strong>[Fix — Database Compilation]</strong> Database compilation is now deferred to <strong>Stage 3</strong> on WotLK/Ascension clients. This ensures the compilation progress log is fully visible in the chat frame after login.
+            </li>
+            <li>
+                <strong>[Fix — Stage 2 Initialization]</strong> Resolved Stage 2 initialization crash by ensuring <code>l10n</code> and <code>QuestieCorrections</code> are initialized during deferred flow.
+            </li>
+            <li>
+                <strong>[Fix — ZoneDB pairs Error]</strong> Fixed "bad argument #1 to 'pairs' (table expected, got nil)" in <code>zoneDB.lua</code> by initializing <code>QuestPointers</code> as an empty table in the dummy block.
+            </li>
+            <li>
+                <strong>[Stability — Comprehensive Dummy Handles]</strong> Implemented comprehensive dummy handles and pointers in <code>QuestieDB.lua</code> to prevent downstream crashes while the database is being compiled.
+            </li>
+            <li>
+                <strong>[Fix — Stage 3 Guarded Initialize]</strong> Added guarded <code>QuestieDB:Initialize()</code> call in Stage 3 to ensure handles are properly set up after late compilation.
+            </li>
+        </ul>
+
+        <hr>
+
+        <h2 id="v102">v1.0.2 — Injection and Newline Fixes</h2>
+        <ul>
+            <li>
+                <strong>[Fix — Hidden Literal Newlines]</strong> Fixed hidden literal newline characters (<code>\\n</code>) in the rechunking script that were causing all split files to load as a single comment block.
+            </li>
+            <li>
+                <strong>[Fix — Database Injection Casing]</strong> Corrected database injection casing in <code>AscensionLoader.lua</code> to match <code>QuestiePluginAPI</code> requirements (<code>QUEST</code>, <code>NPC</code>, <code>OBJECT</code>, <code>ITEM</code>).
+            </li>
+            <li>
+                <strong>[Fix — InjectUiMapData Call]</strong> Restored <code>InjectUiMapData</code> call to ensure zone boundary data is correctly loaded.
+            </li>
+        </ul>
+
+        <hr>
+
+        <h2 id="v101">v1.0.1 — Architecture Update</h2>
+        <ul>
+            <li>
+                <strong>[Performance — Split Database Files]</strong> Split monolithic database files into smaller chunks to resolve memory allocation errors.
+            </li>
+            <li>
+                <strong>[Architecture — Split-Loading Architecture]</strong> Adopted the split-loading architecture (like WotLKDB) to reduce initial memory footprint and load times.
+            </li>
+            <li>
+                <strong>[Loader — Dynamic addonTable Injection]</strong> Updated <code>AscensionLoader.lua</code> to dynamically inject <code>addonTable</code> populated by split files.
+            </li>
+        </ul>
+
+        <hr>
+
+        <h2 id="v100">v1.0.0 — Initial Release</h2>
+        <ul>
+            <li>
+                <strong>[Quests — Initial Ascension Quest Loading]</strong> Initial Ascension quest database for quest tracking, map pins, and tooltips.
+            </li>
+            <li>
+                <strong>[Core — Created Questie-X-AscensionDB]</strong> Initial plugin implementation using <code>QuestiePluginAPI</code> for server-specific data injection.
+            </li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>Maintained by Xurkon</p>
+        <div style="margin-top: 15px; display: flex; justify-content: center; gap: 10px;">
+            <a href="https://www.patreon.com/Xurkon" target="_blank">
+                <img src="https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white" alt="Patreon" height="28">
+            </a>
+            <a href="https://www.paypal.me/Xurkon" target="_blank">
+                <img src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white" alt="PayPal" height="28">
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>
