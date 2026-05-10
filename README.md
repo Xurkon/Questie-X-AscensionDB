@@ -6,7 +6,7 @@
 [![Downloads](https://img.shields.io/github/downloads/Xurkon/Questie-X-AscensionDB/total?style=for-the-badge&color=e67e22)](https://github.com/Xurkon/Questie-X-AscensionDB/releases)
 [![Patreon](https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white)](https://www.patreon.com/Xurkon)
 [![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.me/Xurkon)
-[![License](https://img.shields.io/github/license/Xurkon/Questie-X-AscensionDB?style=for-the-badge&color=2980b9)](LICENSE)
+[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 [![Pages](https://img.shields.io/badge/GitHub%20Pages-v1.0.4-9cf?style=for-the-badge)](https://xurkon.github.io/Questie-X-AscensionDB/)
 
 <br/>
