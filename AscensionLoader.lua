@@ -17,7 +17,8 @@ local function registerAndInject()
     -- Broaden the check to match QuestieServer.lua logic
     local isAscension = _G.IsAscensionServer or realmName:find("Ascension") or realmName:find("Area 52") or
                       realmName:find("Al'ar") or realmName:find("Thrall") or realmName:find("Elune") or
-                      realmName:find("Bronzebeard") or realmName:find("Rexxar") or realmName:find("Grizzly Hills")
+                      realmName:find("Bronzebeard") or realmName:find("Rexxar") or realmName:find("Grizzly Hills") or
+                      realmName:find("CoA") or realmName:find("Conquest") or realmName:find("Vol")
 
     if not isAscension then 
         return true -- Not on Ascension, skip but don't retry

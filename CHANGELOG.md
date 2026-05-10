@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.0.4 — Realm Check Fix
+
+### Plugin
+- **[Fix]** Extended realm allowlist in `AscensionLoader.lua` and `AscensionUiMapData.lua` to include **CoA**, **Conquest**, and **Vol** realm name substrings. This enables the plugin to load correctly on the "Vol'jin - CoA Beta" realm and other Conquest-of-Azeroth realms that were previously being silently skipped.
+
 ## v1.0.3 — Initialization Stability and Visibility Fix
 
 ### Plugin
