@@ -1,5 +1,7 @@
 <div align="center">
 
+![Questie-X-AscensionDB](docs/QuestieXlogo.png)
+
 ![Version](https://img.shields.io/badge/Questie--X--AscensionDB-v1.0.4-blue.svg?style=for-the-badge)
 [![Downloads](https://img.shields.io/github/downloads/Xurkon/Questie-X-AscensionDB/total?style=for-the-badge&color=e67e22)](https://github.com/Xurkon/Questie-X-AscensionDB/releases)
 [![Patreon](https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white)](https://www.patreon.com/Xurkon)
