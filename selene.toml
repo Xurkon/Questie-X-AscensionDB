@@ -1,0 +1,14 @@
+# selene configuration for Questie-X-AscensionDB
+
+std = "wow_classic"
+
+# Ascension-specific globals: see skill wow-addon-selene references/
+# Custom stdfile: wow_classic_ascension.yml (reference only)
+
+[lints]
+incorrect_standard_library_use = "allow"
+unused_variable = "allow"
+global_usage = "allow"
+duplicate_key = "allow"
+ambiguous_if = "allow"
+too_many_arguments = "allow"

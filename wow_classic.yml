@@ -1,0 +1,533 @@
+base: lua51
+name: wow_classic
+globals:
+  GetScreenWidth:
+    args: []
+  GetScreenHeight:
+    args: []
+  UIParent:
+    property: new-fields
+  WorldFrame:
+    property: new-fields
+  ChatFrame1:
+    property: new-fields
+  GameTooltip:
+    property: new-fields
+  GameTooltip.SetPoint:
+    method: true
+    args:
+    - type: string
+    - type: any
+    - type: string
+    - type: any
+    - type: string
+  GameTooltip.SetOwner:
+    method: true
+    args:
+    - type: any
+    - type: string
+  GameTooltip.AddDoubleLine:
+    method: true
+    args:
+    - type: any
+    - type: any
+    - type: any
+    - type: any
+    - required: false
+      type: any
+  GameTooltip.AddLine:
+    method: true
+    args:
+    - type: any
+    - type: any
+    - required: false
+      type: any
+    - required: false
+      type: any
+    - required: false
+      type: any
+  GameTooltip.Show:
+    method: true
+    args: []
+  GameTooltip.Hide:
+    method: true
+    args: []
+  CreateFrame:
+    args:
+    - type: string
+    - type: any
+    - type: any
+    - type: any
+    - type: any
+    must_use: false
+  UnitName:
+    args:
+    - type: string
+    must_use: true
+  UnitHealth:
+    args:
+    - type: string
+    must_use: true
+  UnitHealthMax:
+    args:
+    - type: string
+    must_use: true
+  UnitPower:
+    args:
+    - type: string
+    must_use: true
+  UnitPowerMax:
+    args:
+    - type: string
+    must_use: true
+  UnitExists:
+    args:
+    - type: string
+    must_use: true
+  UnitIsPlayer:
+    args:
+    - type: string
+    must_use: true
+  UnitGUID:
+    args:
+    - type: string
+    must_use: true
+  UnitIsVisible:
+    args:
+    - type: string
+    must_use: false
+  IsShiftKeyDown:
+    args: []
+  IsControlKeyDown:
+    args: []
+  IsAltKeyDown:
+    args: []
+  print:
+    args:
+    - type: '...'
+  DEFAULT_CHAT_FRAME:
+    property: new-fields
+  DEFAULT_CHAT_FRAME.AddMessage:
+    method: true
+    args:
+    - type: any
+    - type: any
+    - required: false
+      type: any
+    - type: any
+    - required: false
+      type: any
+  math:
+    property: new-fields
+  string:
+    property: new-fields
+  table:
+    property: new-fields
+  select:
+    args:
+    - type: any
+    - type: '...'
+  GetGameTime:
+    args: []
+  date:
+    args:
+    - type: string
+    - required: false
+      type: number
+    must_use: true
+  time:
+    args:
+    - required: false
+      type: any
+  RegisterEvent:
+    args:
+    - type: any
+    - type: function
+  UnregisterEvent:
+    args:
+    - type: any
+    - type: function
+  RegisterUnitEvent:
+    args:
+    - type: any
+    - type: string
+    - type: any
+  SlashCmdList:
+    property: new-fields
+  SLASH_:
+    property: new-fields
+  CursorHasItem:
+    args: []
+  PickupItem:
+    args:
+    - type: any
+  PlaceItem:
+    args:
+    - type: any
+    - type: any
+  GetAddOnMetadata:
+    args:
+    - type: any
+    - type: string
+    must_use: true
+  GetLocale:
+    args: []
+  GetBuildInfo:
+    args: []
+  GetItemInfo:
+    args:
+    - type: any
+    must_use: true
+  GetContainerItemInfo:
+    args:
+    - type: any
+    - type: any
+    must_use: true
+  PickupContainerItem:
+    args:
+    - type: any
+    - type: any
+  ContainerIDToInventoryID:
+    args:
+    - type: any
+    must_use: true
+  GetSpellInfo:
+    args:
+    - type: any
+    must_use: true
+  GetActionInfo:
+    args:
+    - type: any
+    must_use: true
+  GetActionText:
+    args:
+    - type: any
+    must_use: true
+  C_QuestLog:
+    property: new-fields
+  IsQuestComplete:
+    args:
+    - type: number
+    must_use: true
+  GetQuestLogTitle:
+    args:
+    - type: number
+    must_use: false
+  GetNumQuestLogEntries:
+    args: []
+    must_use: true
+  C_AchievementInfo:
+    property: new-fields
+  GameFontNormalSmall:
+    property: new-fields
+  GetAchievementNumCriteria:
+    args:
+    - type: number
+    must_use: true
+  SendChatMessage:
+    args: []
+    must_use: false
+  GetRealZoneText:
+    args: []
+    must_use: false
+  ChatEdit_ShowActiveWindow:
+    args: []
+    must_use: false
+  GetNumGroupMembers:
+    args: []
+    must_use: false
+  GetNumRaidMembers:
+    args: []
+    must_use: false
+  GetNumPartyMembers:
+    args: []
+    must_use: false
+  UIDropDownMenu_SetSelectedID:
+    args: []
+    must_use: false
+  UIDropDownMenu_AddButton:
+    args: []
+    must_use: false
+  UIDropDownMenu_Initialize:
+    args: []
+    must_use: false
+  UIDropDownMenu_SetWidth:
+    args: []
+    must_use: false
+  UIDropDownMenu_CreateInfo:
+    args: []
+    must_use: false
+  UIDropDownFork_separatorInfo:
+    args: []
+    must_use: false
+  UIDropDownFork_SetAnchor:
+    args: []
+    must_use: false
+  ToggleDropDownMenu:
+    args: []
+    must_use: false
+  CloseDropDownForks:
+    args: []
+    must_use: false
+  DropDownForkList1:
+    property: new-fields
+  StaticPopupDialogs:
+    property: new-fields
+  StaticPopup_Show:
+    args: []
+    must_use: false
+  CreateFont:
+    args: []
+    must_use: false
+  LibStub:
+    args:
+    - type: string
+    - type: any
+    must_use: false
+  GetFactionInfoByID:
+    args:
+    - type: number
+    must_use: false
+  GetFactionInfo:
+    args:
+    - type: number
+    must_use: false
+  GetNumFactions:
+    args: []
+    must_use: false
+  C_Reputation:
+    property: new-fields
+  C_Timer:
+    property: new-fields
+  Minimap:
+    property: new-fields
+  MinimapCluster:
+    property: new-fields
+  IsInGuild:
+    args: []
+    must_use: false
+  UnitLevel:
+    args:
+    - type: string
+    must_use: false
+  UnitFactionGroup:
+    args: []
+    must_use: false
+  UnitClass:
+    args: []
+    must_use: false
+  IsInInstance:
+    args: []
+    must_use: false
+  IsFlying:
+    args: []
+    must_use: false
+  InCombatLockdown:
+    args: []
+    must_use: false
+  IsMouseButtonDown:
+    args: []
+    must_use: false
+  GetUnitSpeed:
+    args: []
+    must_use: false
+  GetPlayerFacing:
+    args: []
+    must_use: false
+  CanGuildBankRepair:
+    args: []
+    must_use: false
+  BASE_MOVEMENT_SPEED:
+    property: new-fields
+  C_Spell:
+    property: new-fields
+  GetSpellTabInfo:
+    args:
+    - type: number
+    must_use: false
+  GetSpellBookItemName:
+    args:
+    - type: number
+    - type: any
+    must_use: false
+  GetNumSpellTabs:
+    args: []
+    must_use: false
+  GetNumSkillLines:
+    args: []
+    must_use: false
+  GetSkillLineInfo:
+    args:
+    - type: number
+    must_use: false
+  HasAction:
+    args:
+    - type: number
+    must_use: false
+  BOOKTYPE_SPELL:
+    property: new-fields
+  LearnSpell:
+    args: []
+    must_use: false
+  GetSpecializationName:
+    args: []
+    must_use: false
+  GetNumSpecializations:
+    args: []
+    must_use: false
+  GetNumClasses:
+    args: []
+    must_use: false
+  GetClassInfo:
+    args: []
+    must_use: false
+  SelectQuestLogEntry:
+    args:
+    - type: number
+    must_use: false
+  GetQuestLogLeaderBoard:
+    args:
+    - type: number
+    must_use: false
+  GetContainerNumSlots:
+    args:
+    - type: number
+    must_use: false
+  NUM_BAG_SLOTS:
+    property: new-fields
+  ShoppingTooltip1:
+    property: new-fields
+  ShoppingTooltip2:
+    property: new-fields
+  ItemRefTooltip:
+    property: new-fields
+  GetCursorPosition:
+    args: []
+    must_use: false
+  GetCorpsePosition:
+    args: []
+    must_use: false
+  GetZoneText:
+    args: []
+    must_use: false
+  PlaySoundFile:
+    args:
+    - type: any
+    - type: any
+    must_use: false
+  GetTime:
+    args: []
+    must_use: false
+  'YES':
+    property: new-fields
+  'NO':
+    property: new-fields
+  OKAY:
+    property: new-fields
+  CANCEL:
+    property: new-fields
+  BackdropTemplateMixin:
+    property: new-fields
+  XP_IsRetail:
+    property: new-fields
+  XP_IsWOTLK:
+    property: new-fields
+  XP_IsVanilla:
+    property: new-fields
+  EasyFork:
+    property: new-fields
+  tremove:
+    args: []
+    must_use: false
+  tinsert:
+    args: []
+    must_use: false
+  min:
+    args: []
+    must_use: false
+  max:
+    args: []
+    must_use: false
+  ZygorGuidesViewer:
+    property: new-fields
+  ZGV:
+    property: new-fields
+  XP:
+    property: new-fields
+  CombatLogGetCurrentEventInfo:
+    args: []
+    must_use: false
+  X_Plore_L:
+    args:
+    - type: any
+    must_use: false
+  # === WoW Standard API (from comprehensive stdlib) ===
+  ceil:
+    args: []
+  LoadAddOn:
+    args: []
+  SetPortraitToTexture:
+    args: []
+  UnitDebuff:
+    args: []
+  UnitBuff:
+    args: []
+  UnitAura:
+    args: []
+  GetUnitName:
+    args: []
+  GetAddOnMetadata:
+    args: []
+  GetSpellInfo:
+    args: []
+  GetTime:
+    args: []
+  IsInInstance:
+    args: []
+  InCombatLockdown:
+    args: []
+  UnitGUID:
+    args: []
+  UIParent:
+    property: new-fields
+  LibStub:
+    args: []
+  SlashCmdList:
+    property: new-fields
+  OmniCC:
+    property: new-fields
+  OmniCC2:
+    property: new-fields
+  PlayerHitIndicator:
+    property: new-fields
+  PetHitIndicator:
+    property: new-fields
+  QuestieLoader:
+    property: new-fields
+  GetRealmName:
+    args: []
+  C_QuestLog:
+    property: new-fields
+  GetNumQuestLogEntries:
+    args: []
+  PlaySoundFile:
+    args: []
+  SelectQuestLogEntry:
+    args: []
+  GetQuestLogTitle:
+    args: []
+  GetQuestLogLeaderBoard:
+    args: []
+  # Ascension-specific
+  AscensionUiMapData:
+    args: []
+  C_BuildEditor:
+    property: new-fields
+  C_CharAddonProduct:
+    property: new-fields
+  C_Manastorm:
+    property: new-fields
+  C_HighRisk:
+    property: new-fields
+  C_MysticEnchant:
+    property: new-fields
