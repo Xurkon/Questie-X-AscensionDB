@@ -1,6 +1,16 @@
-# Questie-X-AscensionDB
+<div align="center">
 
-A [Questie-X](https://github.com/Xurkon/Questie-X) plugin that injects the **Ascension** server database — custom quests, NPCs, objects, items, and zone data — into Questie without modifying core files.
+![Version](https://img.shields.io/badge/Questie--X--AscensionDB-v1.0.4-blue.svg?style=for-the-badge)
+[![Downloads](https://img.shields.io/github/downloads/Xurkon/Questie-X-AscensionDB/total?style=for-the-badge&color=e67e22)](https://github.com/Xurkon/Questie-X-AscensionDB/releases)
+[![License](https://img.shields.io/github/license/Xurkon/Questie-X-AscensionDB?style=for-the-badge&color=2980b9)](LICENSE)
+
+<br/>
+
+**A [Questie-X](https://github.com/Xurkon/Questie-X) plugin that injects the Ascension server database — custom quests, NPCs, objects, items, and zone data — into Questie without modifying core files.**
+
+[Download Latest](https://github.com/Xurkon/Questie-X-AscensionDB/releases/latest) &nbsp;&bull;&nbsp; [View Source](https://github.com/Xurkon/Questie-X-AscensionDB)
+
+</div>
 
 ---
 
