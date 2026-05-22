@@ -30,6 +30,9 @@ local data = {
 	[1245] = 215, -- Camp Narache -> Mulgore
 	[1225] = 215, -- The Venture Co. Mine -> Mulgore
 	[1224] = 215, -- Palemane Rock -> Mulgore
+	-- Blood Elf
+	[1241] = 3430, -- Sunstrider Isle -> Eversong Woods
+	[946]  = 3430, -- Sunstrider Isle ghost/transition map -> Eversong Woods
 }
 
 for k, v in pairs(data) do addonTable.uiMapIdToAreaId[k] = v end

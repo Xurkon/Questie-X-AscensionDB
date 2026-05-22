@@ -172,27 +172,36 @@
         <h1>Changelog</h1>
         <p class="subtitle">Complete history of changes, fixes, and additions.</p>
         <div style="display: flex; justify-content: center; gap: 10px;">
-            <code>Version: v1.0.4</code>
+            <code>Version: v1.0.4 + Unreleased</code>
             <a href="index.html"
                 style="background: var(--bg-tertiary); color: var(--accent-blue); text-decoration: none; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; border: 1px solid var(--border-color);">&larr; Back to Documentation</a>
         </div>
     </div>
 
     <div class="container">
+        <h2 id="unreleased">[Unreleased] — Sunstrider Cleanup and Documentation Alignment</h2>
+        <ul>
+            <li>
+                <strong>[Cleanup — Remove Redundant Sunstrider Overrides]</strong> Removed temporary <code>uiMapIdToAreaId</code> entries for Sunstrider Isle (<code>1241 -&gt; 3430</code>, <code>946 -&gt; 3430</code>) from <code>Zones/AscensionZoneTables.lua</code>.
+            </li>
+            <li>
+                <strong>[Why]</strong> The active fix path now lives in Questie-X core, which performs the per-zone ghost-map handling, reverse-map resolution, and compatibility-layer work locally. Keeping duplicate plugin-side overrides in AscensionDB risked documentation drift and obscured the real root cause.
+            </li>
+            <li>
+                <strong>[What did not work / learned]</strong> Treating AscensionDB as the primary place to solve the current Sunstrider arrow regression was a dead end. The remaining failures were in Questie-X core tooltip, arrow, map, and compatibility layers — not in the plugin database.
+            </li>
+        </ul>
+
+        <hr>
+
         <h2 id="v104">v1.0.4 — Realm Check Fix</h2>
         <ul>
             <li>
-                <strong>[Fix — Realm Allowlist]</strong> Extended realm allowlist in <code>AscensionLoader.lua</code> and <code>AscensionUiMapData.lua</code> to include <strong>CoA Beta on Vol'jin</strong> realm name.
+                <strong>[Fix — Realm Allowlist]</strong> Extended realm allowlist in <code>AscensionLoader.lua</code> and <code>AscensionUiMapData.lua</code> to include <strong>CoA</strong>, <strong>Conquest</strong>, and <strong>Vol</strong> realm-name substrings.
                 <ul>
-                    <li>The original allowlist checked for Ascension, Elune, Area 52, Bronzebeard, Rexxar, and Grizzly Hills — but did not include the "CoA Beta on Vol'jin" realm.</li>
-                    <li>This caused the plugin to be silently skipped on that server.</li>
+                    <li>This allows the plugin to activate on Vol'jin - CoA Beta and other Conquest-of-Azeroth realm variants that were previously skipped.</li>
+                    <li>The plugin now matches the broader realm naming used by current Ascension / CoA deployments instead of relying on a single exact label.</li>
                 </ul>
-            </li>
-            <li>
-                <strong>[Fix — MapIconTooltip Empty creatureLevels]</strong> Resolved <code>attempt to concatenate local 'minLevel' (a nil value)</code> crash in <code>MapIconTooltip.lua</code> when hovering over creatures whose <code>creatureLevels</code> entry was an empty table <code>{}</code> instead of the expected <code>[1]=minLevel, [2]=maxLevel, [3]=rank</code> tuple. Added early-return guard in <code>_GetLevelString</code>.
-            </li>
-            <li>
-                <strong>[Export-ignore Cleanup]</strong> <code>.gitattributes</code> and <code>.gitignore</code> now match Questie-X export-ignore patterns, keeping dev files (skills, workflow, scratch, Tests, Tools, docs/) out of release .zip assets.
             </li>
         </ul>
 

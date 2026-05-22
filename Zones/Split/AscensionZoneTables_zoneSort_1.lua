@@ -28,6 +28,7 @@ local data = {
 	[1219] = "Skull Rock",
 	[1216] = "The Grizzled Den",
 	[1214] = "Gol'bolar Quarry",
+	[1241] = "Sunstrider Isle",
 }
 
 for k, v in pairs(data) do addonTable.zoneSort[k] = v end

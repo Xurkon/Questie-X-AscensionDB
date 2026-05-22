@@ -28,12 +28,10 @@ AscensionZoneTables.uiMapIdToAreaId = AscensionZoneTables.uiMapIdToAreaId or {
 	[1213] = 85, -- Night Web's Hollow -> Tirisfal Glades
 	[1245] = 215, -- Camp Narache -> Mulgore
 	[1225] = 215, -- The Venture Co. Mine -> Mulgore
-[1224] = 215, -- Palemane Rock -> Mulgore
-
-	-- Sunstrider Isle (Ascension starting zone)
-	[1241] = 3430, -- Sunstrider Isle uiMapId -> areaId
-	[946] = 3430,  -- Sunstrider Isle ghost/loading map (GetCurrentUiMapID returns 946) -> areaId
-
+	[1224] = 215, -- Palemane Rock -> Mulgore
+	-- Blood Elf
+	[1241] = 3430, -- Sunstrider Isle -> Eversong Woods (Horde starting zone)
+	[946]  = 3430, -- Sunstrider Isle ghost/transition map -> Eversong Woods
 }
 
 -- Register zone sort names for custom zones so they can be used in quest zoneOrSort field
@@ -62,6 +60,7 @@ AscensionZoneTables.zoneSort = AscensionZoneTables.zoneSort or {
 	[1219] = "Skull Rock",
 	[1216] = "The Grizzled Den",
 	[1214] = "Gol'bolar Quarry",
+	[1241] = "Sunstrider Isle",
 }
 
 -- Export to addonTable for AscensionLoader to find
