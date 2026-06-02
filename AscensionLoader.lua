@@ -1,7 +1,6 @@
 local addonName, addonTable = ...
 print("|cFF5EBAF3Questie|r|cFFDAFAFD-X|r [AscensionLoader] Loading...")
 
--- Ascension-X Loader
 local function registerAndInject()
     if not QuestieLoader then
         return false
@@ -28,6 +27,11 @@ local function registerAndInject()
     if not plugin then return true end -- Already registered or error
 
     print("|cFF5EBAF3Questie|r|cFFDAFAFD-X|r [AscensionLoader] Plugin registered, injecting data...")
+
+    -- Sunstrider Isle note for future agents:
+    -- the Ascension Sunstrider rows should keep their source areaIds intact
+    -- (3430 for Eversong Woods, 3431 for Sunstrider Isle). ZoneDB handles the
+    -- uiMapId rendering mapping later.
 
     if addonTable.zoneSort or addonTable.uiMapIdToAreaId then
         plugin:InjectZoneTables(addonTable)
@@ -67,13 +71,11 @@ local function registerAndInject()
     return true
 end
 
--- Try registering immediately
-if not registerAndInject() then
-    -- Fallback: Register at PLAYER_LOGIN if QuestieLoader wasn't ready
-    local frame = CreateFrame("Frame")
-    frame:RegisterEvent("PLAYER_LOGIN")
-    frame:SetScript("OnEvent", function(self)
-        self:UnregisterEvent("PLAYER_LOGIN")
-        registerAndInject()
-    end)
-end
+-- Defer registration until PLAYER_LOGIN so the database chunks loaded from the
+-- TOC have finished populating addonTable.npcData/questData/objectData/itemData.
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_LOGIN")
+frame:SetScript("OnEvent", function(self)
+    self:UnregisterEvent("PLAYER_LOGIN")
+    registerAndInject()
+end)

@@ -4,6 +4,7 @@
 ## Author: Questie-X Team
 ## Version: 1.0.3
 ## RequiredDeps: Questie-X
+## OptionalDeps: Questie-X-WotLKDB
 ## X-Questie-Plugin-Name: Ascension
 
 AscensionLoader.lua
