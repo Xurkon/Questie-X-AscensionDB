@@ -37,4 +37,5 @@ LICENSE.md
 Questie-X-Turtle.toc
 skills/
 scratch/
-.claude/skills/
+.claude/skills/test-macros-8325.lua
+test-macros-*.lua
