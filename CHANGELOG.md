@@ -11,6 +11,12 @@
 
 - **[Fix — Quest 8335 Level]** Set `requiredLevel` ([4]) and `questLevel` ([5]) for quest 8335 ("Felendren the Banished") in `Bronzebeard/Split/AscensionQuestDB_questData_1.lua` to 1/1 to match the actual starter level on Ascension's Eversong quest chain. Previously stored as 10/13, which made the quest tracker show an incorrect level for the quest when viewed in the learner's quest list.
 
+### Release v1.0.5
+- **[Plugin — Realm Check]** Committed the CoA Beta / Vol'jin realm allowlist fix so `AscensionLoader.lua` now recognizes `CoA`, `Conquest`, and `Vol` realm-name substrings and loads on the Vol'jin CoA Beta environment.
+- **[Database — Sunstrider NPC Spawns]** Corrected Sunstrider NPC spawn data in the Ascension database split files, including the trainer / quest chain coverage used by the Eversong and Sunstrider Isle content.
+- **[Database — Sunstrider Quest Items]** Added the matching Sunstrider quest item data to the item split tables so the quest chain resolves cleanly without missing item metadata.
+- **[Cleanup — Dev/Test Files]** Tightened `.gitignore` and untracked local test/dev Python helpers so repository releases do not ship transient tooling such as `rechunk_db.py`, `test_bracket.py`, or `test-macros-*.lua`.
+
 ## v1.0.4 — Realm Check Fix
 
 ### Plugin

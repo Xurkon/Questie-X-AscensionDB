@@ -17,15 +17,22 @@
 debug.lua
 debug_tooltip.lua
 verify_*.lua
+# dev/test helpers that should never ship live
+rechunk_db.py
+test_*.py
+test-*.py
+*_test.py
+dev_*.py
+dev-*.py
+tmp_*.py
+tests/
+Tests/
 .history/
 Research/
 Tools/
-tests/
-Tests/
 workflow/
 __pycache__/
 .agents/
-tmp_*.py
 release_notes.txt
 RELEASE_NOTES.md
 changelog.html
