@@ -231,7 +231,7 @@
         <img src="QuestieXlogo.png" alt="Questie-X Logo" width="400" />
         <p class="subtitle">A Questie-X plugin that injects the Ascension server database — custom quests, NPCs, objects, items, and zone data — into Questie without modifying core files.</p>
         <div style="display: flex; justify-content: center; gap: 10px;">
-            <code>Version: v1.0.4 + Unreleased</code>
+            <code>Version: v1.0.5</code>
             <a href="changelog.html"
                 style="background: var(--bg-tertiary); color: var(--accent-green); text-decoration: none; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; border: 1px solid var(--border-color);">View
                 Changelog</a>
@@ -245,16 +245,16 @@
             <p>Automatically activates on supported Ascension realms (Elune, Area 52, Bronzebeard, Rexxar, Grizzly Hills, and CoA Beta on Vol'jin), registering its data via the <code>QuestiePluginAPI</code> without modifying core files.</p>
         </section>
 
-        <section id="unreleased-highlights">
-            <h2>Current Unreleased Work</h2>
-            <p>The current working tree includes a documentation-alignment cleanup for Sunstrider Isle handling. These notes describe local unreleased changes that may not yet be part of the latest tagged plugin release.</p>
+        <section id="v105-highlights">
+            <h2>v1.0.5 Highlights</h2>
+            <p>The current release packages the realm-check fix and the verified Sunstrider database updates. These notes describe the content shipped in v1.0.5.</p>
 
             <div class="important">
-                <strong>Sunstrider cleanup:</strong> Temporary <code>uiMapIdToAreaId</code> overrides for <code>1241</code> and <code>946</code> were removed from <code>Zones/AscensionZoneTables.lua</code>. The active fix path for the current regression lives in Questie-X core, not in this plugin.
+                <strong>Sunstrider cleanup:</strong> Temporary <code>uiMapIdToAreaId</code> overrides for <code>1241</code> and <code>946</code> were removed from <code>Zones/AscensionZoneTables.lua</code>. The active fix path lives in Questie-X core, not in the plugin layer.
             </div>
 
             <div class="important">
-                <strong>Lesson learned:</strong> Treating AscensionDB as the primary place to fix the current Sunstrider arrow issue was a dead end. The remaining failures were in Questie-X core compatibility, arrow, map, and tooltip layers.
+                <strong>Lesson learned:</strong> Treating AscensionDB as the primary place to fix the Sunstrider arrow issue was a dead end. The remaining failures were in Questie-X core compatibility layers.
             </div>
         </section>
 

@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## v1.0.5 — Release Notes
 
 ### Database
 - **[Cleanup — Remove Redundant Sunstrider Overrides]** Removed temporary `uiMapIdToAreaId` entries for Sunstrider Isle (`1241 -> 3430`, `946 -> 3430`) from `Zones/AscensionZoneTables.lua`.
@@ -16,8 +16,6 @@
 - **[Database — Sunstrider NPC Spawns]** Corrected Sunstrider NPC spawn data in the Ascension database split files, including the trainer / quest chain coverage used by the Eversong and Sunstrider Isle content.
 - **[Database — Sunstrider Quest Items]** Added the matching Sunstrider quest item data to the item split tables so the quest chain resolves cleanly without missing item metadata.
 - **[Cleanup — Dev/Test Files]** Tightened `.gitignore` and untracked local test/dev Python helpers so repository releases do not ship transient tooling such as `rechunk_db.py`, `test_bracket.py`, or `test-macros-*.lua`.
-
-## v1.0.4 — Realm Check Fix
 
 ### Plugin
 - **[Fix]** Extended realm allowlist in `AscensionLoader.lua` and `AscensionUiMapData.lua` to include **CoA**, **Conquest**, and **Vol** realm name substrings. This enables the plugin to load correctly on the "Vol'jin - CoA Beta" realm and other Conquest-of-Azeroth realms that were previously being silently skipped.
