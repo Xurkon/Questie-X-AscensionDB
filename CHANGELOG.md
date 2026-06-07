@@ -9,6 +9,8 @@
 
 - **[Fix — Tooltip Objective Precedence]** Updated the tooltip data handoff so active quest tooltips defer to canonical AscensionDB objective data when it is present. This keeps learner-generated tooltip text from obscuring the split-table objective lines during active quest testing and matches the current quest/objective ownership split.
 
+- **[Fix — Quest 8335 Level]** Set `requiredLevel` ([4]) and `questLevel` ([5]) for quest 8335 ("Felendren the Banished") in `Bronzebeard/Split/AscensionQuestDB_questData_1.lua` to 1/1 to match the actual starter level on Ascension's Eversong quest chain. Previously stored as 10/13, which made the quest tracker show an incorrect level for the quest when viewed in the learner's quest list.
+
 ## v1.0.4 — Realm Check Fix
 
 ### Plugin
