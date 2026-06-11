@@ -3,6 +3,8 @@
 ## v1.0.5 — Release Notes
 
 ### Database
+- **[Add — Felendren's Head Drop]** Added item `20799` ("Felendren's Head") to `Bronzebeard/AscensionItemDB.lua` (and regenerated the item split file): it drops from NPC `15367` (Felendren the Banished) and is tied to quest `8335`. This gives the quest 8335 objective item a curated source so its drop NPC resolves in AscensionDB even when WotLKDB is not loaded.
+
 - **[Cleanup — Remove Redundant Sunstrider Overrides]** Removed temporary `uiMapIdToAreaId` entries for Sunstrider Isle (`1241 -> 3430`, `946 -> 3430`) from `Zones/AscensionZoneTables.lua`.
   - **Why**: The active fix path now lives in Questie-X core, which performs per-zone/ghost-map handling and reverse-map resolution locally. Keeping duplicate plugin-side overrides in AscensionDB risked documentation drift and obscured the actual root cause.
   - **What did NOT work / learned**: Treating AscensionDB as the primary place to solve Sunstrider arrow behavior was a dead end for the current issue. The remaining failures were in Questie-X core tooltip/arrow/map compatibility layers, not in the database plugin.
