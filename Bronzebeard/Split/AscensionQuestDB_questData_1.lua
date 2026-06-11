@@ -146,24 +146,7 @@ local data = {
 		[1660070] = {[1]="Stay a While",[2]={{162903}},[3]={{162903}},[4]=4,[5]=8,[6]=690,[8]="Take a moment from the noise and haste and stay a while to listen to Ammus Grey-Eye.",[10]={nil,{{5299566}}},[13]={1660066},[17]=1245},
 		[1660068]={[1]="Exile of Embers",[2]={{162906}},[3]={{162906}},[4]=6,[5]=8,[6]=690,[7]=0,[8]={"Channel the blessing to weaken the fire elementals prowling around Ardunno's hut and banish them back to their elemental plane."},[10]={{{162907}},nil,nil},[11]=558967,[13]={1660067},[17]=1412},
 		[1660069] = {[1]="The Smoke that Remembers",[2]={{162908}},[3]={{162908}},[4]=4,[5]=8,[6]=690,[8]="Obtain incense for Ancestor Emnil's altar. You will need Prairie Sage and Kodo Tallow.",[10]={nil,nil,{{558968},{558969}}},[13]={1660067},[17]=1412},
-		[500004] = {[1]="The Circle's Rite",[2]={{991485}},[3]={{991485}},[4]=6,[5]=10,[6]=690,[8]="Collect 8 Ritual Totems and bring them to Maur Tharok Windhoof at Stonefather's Circle.",[10]={nil,nil,{{662335}}},[17]=1412},
-		--Eversong Woods / Sunstrider Isle
-		[8327] = {[1]="Report to Lanthan Perilon",[3]={{15281}},[4]=3,[5]=5,[6]=0,[8]="Speak with Lanthan Perilon on Sunstrider Isle.",[17]=3430},
-		[8335] = {[1]="Felendren the Banished",[3]={{15281}},[4]=1,[5]=1,[6]=0,[7]=0,[8]="Kill 8 Arcane Wraiths, 2 Tainted Arcane Wraiths, and Felendren the Banished in Falthrien Academy. Return to Lanthan Perilon on Sunstrider Isle.",[10]={{{15273,nil,"Arcane Wraith slain"},nil,nil},{{15298,nil,"Tainted Arcane Wraith slain"},nil,nil},{Type="killcredit",IdList={15367}}},[17]=3431},
-
-		-- Sunstrider Isle (absent from split, partial overrides to remove race/class gates)
-		[8325] = {[6]=0},
-		[8326] = {[6]=0},
-		[8328] = {[6]=0},
-		[8330] = {[6]=0},
-		[8334] = {[1]="Aggression",[2]={{15281}},[3]={{15281}},[4]=1,[5]=4,[6]=0,[7]=0,[8]="Kill 7 Tenders and 7 Feral Tenders, and then return to Lanthan Perilon on Sunstrider Isle.",[10]={{{15271,"Tender slain"}},{{15294,"Feral Tender slain"}}},[17]=3431},
-		[9392] = {[6]=0},
-		[10068] = {[6]=0,[7]=0},
-		[10069] = {[6]=0,[7]=0},
-		[10070] = {[6]=0,[7]=0},
-		[10071] = {[6]=0,[7]=0},
-		[10072] = {[6]=0,[7]=0},
-		[10073] = {[6]=0,[7]=0},
+		[500004] = {[1]="The Circle’s Rite",[2]={{991485}},[3]={{991485}},[4]=6,[5]=10,[6]=690,[8]="Collect 8 Ritual Totems and bring them to Maur Tharok Windhoof at Stonefather's Circle.",[10]={nil,nil,{{662335}}},[17]=1412},
 }
 
 for k, v in pairs(data) do addonTable.questData[k] = v end

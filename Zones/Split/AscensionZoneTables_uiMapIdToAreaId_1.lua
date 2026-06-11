@@ -31,7 +31,7 @@ local data = {
 	[1225] = 215, -- The Venture Co. Mine -> Mulgore
 	[1224] = 215, -- Palemane Rock -> Mulgore
 	-- Blood Elf
-	[1241] = 3430, -- Sunstrider Isle -> Eversong Woods
+	[1241] = 3430, -- Sunstrider Isle -> Eversong Woods (Horde starting zone)
 	[946]  = 3430, -- Sunstrider Isle ghost/transition map -> Eversong Woods
 }
 
