@@ -3,6 +3,8 @@
 ## v1.0.5 — Release Notes
 
 ### Database
+- **[Fix — Mana Wyrm Spawn Override]** Added NPC `15274` ("Mana Wyrm") to the Ascension NPC database and split table with the curated 70-point Sunstrider Isle (`uiMapId 1241`) spawn set. This gives Questie-X a static source for quest 8325 objective pins so Auto mode can prefer AscensionDB data over sparse learner-only spawn history.
+
 - **[Add — Felendren's Head Drop]** Added item `20799` ("Felendren's Head") to `Bronzebeard/AscensionItemDB.lua` (and regenerated the item split file): it drops from NPC `15367` (Felendren the Banished) and is tied to quest `8335`. This gives the quest 8335 objective item a curated source so its drop NPC resolves in AscensionDB even when WotLKDB is not loaded.
 
 - **[Cleanup — Remove Redundant Sunstrider Overrides]** Removed temporary `uiMapIdToAreaId` entries for Sunstrider Isle (`1241 -> 3430`, `946 -> 3430`) from `Zones/AscensionZoneTables.lua`.
